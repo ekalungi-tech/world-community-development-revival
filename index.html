@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@
       --dark: #212529;
       --gray: #6c757d;
       --white: #ffffff;
+      --accent: #f47c00;
       --gradient: linear-gradient(135deg, var(--primary), #4a7c59);
     }
 
@@ -41,6 +41,7 @@
 
     img {
       max-width: 100%;
+      border-radius: 8px;
     }
 
     .container {
@@ -65,6 +66,7 @@
     .btn:hover {
       background: #1e4420;
       transform: translateY(-2px);
+      color: white;
     }
 
     .section {
@@ -176,6 +178,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 50px;
       align-items: flex-start;
+      margin-top: 40px;
     }
 
     .about-text h3 {
@@ -262,11 +265,14 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .program-card:hover {
-      transform: translateY(-10px);
+    .program-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .program-img {
@@ -364,14 +370,12 @@
       text-align: center;
     }
 
-    .contact-item i {
-      font-size: 2.5rem;
-      color: var(--secondary);
-      margin-bottom: 15px;
-    }
-
     .contact-item h4 {
       margin-bottom: 10px;
+    }
+
+    .contact-item p {
+      font-size: 1.1rem;
     }
 
     /* Footer */
@@ -406,13 +410,12 @@
 
     /* Responsive */
     @media (max-width: 992px) {
-      .about-content,
-      .hero h1 {
-        grid-column: span 2;
-      }
       .about-content {
         grid-template-columns: 1fr;
         gap: 30px;
+      }
+      .about-image {
+        order: -1;
       }
     }
 
@@ -516,7 +519,7 @@
           </div>
         </div>
         <div class="about-image">
-          <img src="https://placehold.co/600x400/2c5f2d/white?text=WOCODER+Team" alt="WOCODER Team" />
+          <img src="https://placehold.co/600x400/2c5f2d/ffffff?text=WOCODER+Team" alt="WOCODER Team working in the community" />
         </div>
       </div>
 
@@ -567,14 +570,12 @@
       <div class="program-grid">
         <!-- Program 1 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>🌱</i>
-          </div>
+          <div class="program-img">🌱</div>
           <div class="program-content">
             <h3>Cooperative Farming</h3>
-            <p>Medium to Large-scale farms to ensure food security and generate sustainable income for community programs.</p>
+            <p>Medium to large-scale farms to ensure food security and generate sustainable income for community programs.</p>
             <ul class="program-list">
-              <li>Fruit orchards (citrus, mango, Guavar, Pineapple, etc.)</li>
+              <li>Fruit orchards (citrus, mango, guava, pineapple, etc.)</li>
               <li>Vegetable & herb gardens</li>
               <li>Grain cultivation (maize, rice, beans)</li>
               <li>Livestock (poultry, goats, cattle)</li>
@@ -585,16 +586,14 @@
 
         <!-- Program 2 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>📚</i>
-          </div>
+          <div class="program-img">📚</div>
           <div class="program-content">
-            <h3>Young Adults Academics</h3>
+            <h3>Education for All Ages</h3>
             <p>Breaking the cycle of poverty through accessible, high-quality education for all ages.</p>
             <ul class="program-list">
-              <li>Children (4-12): Foundational literacy & numeracy</li>
-              <li>Youth (12-16): Academic development & life skills</li>
-              <li>Young Adults (16-21): Vocational guidance & training</li>
+              <li>Children (4–12): Foundational literacy & numeracy</li>
+              <li>Youth (12–16): Academic development & life skills</li>
+              <li>Young Adults (16–21): Vocational guidance & training</li>
               <li>Music, sports, and critical thinking programs</li>
             </ul>
           </div>
@@ -602,16 +601,14 @@
 
         <!-- Program 3 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>🔧</i>
-          </div>
+          <div class="program-img">🔧</div>
           <div class="program-content">
             <h3>Vocational Training</h3>
             <p>Equipping individuals with marketable skills for self-sufficiency and entrepreneurship.</p>
             <ul class="program-list">
               <li>Auto mechanics</li>
               <li>Computer repair & operations</li>
-              <li>Electronics and Electrical wiring</li>
+              <li>Electronics and electrical wiring</li>
               <li>Tailoring & fashion design</li>
               <li>Carpentry & masonry</li>
               <li>Culinary arts & catering</li>
@@ -622,42 +619,37 @@
 
         <!-- Program 4 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>🏠</i>
-          </div>
+          <div class="program-img">🏠</div>
           <div class="program-content">
             <h3>Emergency Shelters</h3>
-            <p>Provide Safe, clean housing for displaced individuals and families with access to essential services.</p>
+            <p>Safe, clean housing for displaced individuals and families with access to essential services.</p>
             <ul class="program-list">
               <li>Gender-separated facilities</li>
               <li>Group mentoring & critical thinking classes</li>
               <li>Meditation & talking circles</li>
-              <li>Access to Education & Health Support</li>
+              <li>Access to education & health support</li>
             </ul>
           </div>
         </div>
 
         <!-- Program 5 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>❤️</i>
-          </div>
+          <div class="program-img">❤️</div>
           <div class="program-content">
             <h3>Life Recovery Centers</h3>
-            <p>For individuals overcoming addiction, abuse, and trauma.</p>
+            <p>Support for individuals overcoming addiction, abuse, and trauma.</p>
             <ul class="program-list">
-              <li>Change Intesive Therapy to Intensive Mentoring</li>
-              <li>Medical and Behavioal Services</li>
-              
+              <li>Intensive mentoring and therapy</li>
+              <li>Medical and behavioral services</li>
+              <li>Two-phase recovery model (1–2 years)</li>
+              <li>Safe environment with counseling and skill-building</li>
             </ul>
           </div>
         </div>
 
         <!-- Program 6 -->
         <div class="program-card">
-          <div class="program-img">
-            <i>🏥</i>
-          </div>
+          <div class="program-img">🏥</div>
           <div class="program-content">
             <h3>Health & Dental Clinics</h3>
             <p>Access to medical care for the most vulnerable, including emergency response.</p>
@@ -666,7 +658,7 @@
               <li>Dental services & prescription medications</li>
               <li>Maternal & child health programs</li>
               <li>Vaccination centers</li>
-              <li>Ambulance and Rescue Services</li>
+              <li>Ambulance and rescue services</li>
             </ul>
           </div>
         </div>
@@ -684,29 +676,29 @@
         <div class="infra-category">
           <h4>Farm Infrastructure</h4>
           <ul class="program-list">
-            <li>10+ acres Land Development irrigation Systems and Fencing and land Clearing</li>
-            <li>Water Supply and Management, water tanks pumps and pipes  (3 rooms)</li>
-            <li>Farm Buildings and Housings, Barns, sheds, poultry houses and pigstiles</li>
-            <li>Staff housing and Office</li>
+            <li>10+ acres land, development, fencing, and clearing</li>
+            <li>Water supply: tanks, pumps, pipes, and irrigation systems</li>
+            <li>Farm buildings: barns, sheds, poultry houses, pigsties</li>
+            <li>Staff housing and office space</li>
             <li>Dining hall & kitchen</li>
-            <li>Power and  Technology Electricity Supply, solar panels and generators</li>
+            <li>Power supply: solar panels and generators</li>
             <li>ICT tools for smart farming</li>
-            <li>Storage and Processing, inluding Silos, granaries and cold storage facilities</li>
-            <li>warehouses, pack houses, milling or processing units</li>
-            <li>Fencing, windbreaks and security systems</li>
+            <li>Storage: silos, granaries, cold storage</li>
+            <li>Warehouses, pack houses, milling units</li>
+            <li>Fencing, windbreaks, and security systems</li>
           </ul>
         </div>
 
         <div class="infra-category">
           <h4>Farm Machinery & Tools</h4>
           <ul class="program-list">
-            <li>Mechanized machinery ie Tractor the main farm machine that pulls many Implemates</li>
-            <li>Plows & attachments</li>
+            <li>Tractor (main farm machine with attachments)</li>
+            <li>Plows & implements</li>
             <li>Refrigerated box truck</li>
             <li>Sprayers for applying pesticides</li>
-            <li>Simple Hand tools (shovels, hoes, marchetes, rake, hand forks, wheelbarrows, saws)</li>
-            <li>Workshop tools (Welder, table saw and Relative workshop Tools)</li>
-            <li>Morers for cutting grass</li>
+            <li>Hand tools: shovels, hoes, machetes, rakes, wheelbarrows, saws</li>
+            <li>Workshop tools: welder, table saw, etc.</li>
+            <li>Mowers for cutting grass</li>
             <li>Generators</li>
           </ul>
         </div>
@@ -727,47 +719,49 @@
         <div class="infra-category">
           <h4>Education</h4>
           <ul class="program-list">
-            <li>laptops and Desktop Computers </li>
-            <li>Licenced software ie Operating System and Ativirus</li>
+            <li>Laptops and desktop computers</li>
+            <li>Licensed software: OS and antivirus</li>
             <li>Laser printer</li>
             <li>School desks, chairs, books</li>
             <li>Music instruments & sports equipment</li>
           </ul>
         </div>
 
-                <div class="infra-category">
-          <h4>Medical Medical Equipment</h4>
-          <ul class="program-list">
-            <li>Stethoscope for listening to the heart and lungs</li>
-            <li>Blood Pressure Monitors (Sphygmanometers)</li>
-            <li>Thermometers ie Digital and infrared</li>
-            <li>Glucometers for Blood shugar testing</li>
-            <li>Pulse Oximeters to measure oxygen levels</li>
-            <li>ECG Machine for heart monitoring</li>
-            <li>Basic Ultrasoung Machine for maternal and general diagnosis</li>
-            <li>Microsopes for Lab tests</li>
-        
         <div class="infra-category">
-          <h4>Treatment, examination Emergency and lab testing Equipment</h4>
+          <h4>Medical Equipment</h4>
+          <ul class="program-list">
+            <li>Stethoscope for heart and lung monitoring</li>
+            <li>Blood pressure monitors (sphygmomanometers)</li>
+            <li>Thermometers: digital and infrared</li>
+            <li>Glucometers for blood sugar testing</li>
+            <li>Pulse oximeters to measure oxygen levels</li>
+            <li>ECG machine for heart monitoring</li>
+            <li>Basic ultrasound machine for maternal and general diagnosis</li>
+            <li>Microscopes for lab tests</li>
+          </ul>
+        </div>
+
+        <div class="infra-category">
+          <h4>Treatment & Emergency Equipment</h4>
           <ul class="program-list">
             <li>First aid and trauma kits</li>
-            <li>Oxygen concetrators and cylinders</li>
-            <li>Emergency Stretchers and wheelchairs</li>
-            <li>Examination couches / beds.</li>
-            <li>Patient Monitors(for vitals like BP, heart rate, oxygen</li>
-            <li>Nebulizer for respiratory condition.</li>
-            <li>Suction machines to clear airways.</li>
-            <li>Minor surgical/ instrument sets for wound care and suturing</li>
-            <li>Sterilizer / Autoclave for disinfecting instruments. </li>
-            <li>IV stands and infusion pumps for fluids and medication </li>
-            <li>Centrifuges for Blood tests</li>
-            <li>Hermoglobin meters</li>
+            <li>Oxygen concentrators and cylinders</li>
+            <li>Emergency stretchers and wheelchairs</li>
+            <li>Examination couches/beds</li>
+            <li>Patient monitors (BP, heart rate, oxygen)</li>
+            <li>Nebulizer for respiratory conditions</li>
+            <li>Suction machines to clear airways</li>
+            <li>Minor surgical instrument sets</li>
+            <li>Sterilizer/autoclave for disinfecting instruments</li>
+            <li>IV stands and infusion pumps</li>
+            <li>Centrifuges for blood tests</li>
+            <li>Hemoglobin meters</li>
             <li>Urine analyzers</li>
-            <li>Rapid diagnostic test kits (for malaria, HIV, pregnancy, etc)</li>
-            <li>Refrigerator</li>
-            <li>Medical waste Disposal bins</li>
-            <li>Basic furnicture (chairs, waiting benches, cabinets</li>
-            <li>Computers and record keeping system</li>
+            <li>Rapid diagnostic test kits (malaria, HIV, pregnancy)</li>
+            <li>Refrigerator for medication storage</li>
+            <li>Medical waste disposal bins</li>
+            <li>Furniture: chairs, waiting benches, cabinets</li>
+            <li>Computers and record-keeping system</li>
           </ul>
         </div>
 
@@ -796,19 +790,16 @@
       
       <div class="contact-info">
         <div class="contact-item">
-          <i>📧</i>
           <h4>Email</h4>
           <p>info@wocoder.org</p>
         </div>
         
         <div class="contact-item">
-          <i>🌐</i>
           <h4>Website</h4>
           <p>www.wocoder.org</p>
         </div>
         
         <div class="contact-item">
-          <i>📞</i>
           <h4>Phone</h4>
           <p>+256 755 998281</p>
         </div>
@@ -823,10 +814,10 @@
         <p>World Community Development Revival (WOCODER)</p>
         <p>Global Outreach • Sustainable Impact • Community Empowerment</p>
         <div class="social-links">
-          <a href="#"><i>f</i></a>
-          <a href="#"><i>t</i></a>
-          <a href="#"><i>in</i></a>
-          <a href="#"><i>ig</i></a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
         </div>
         <p>&copy; 2024 World Community Development Revival (WOCODER). All rights reserved.</p>
       </div>
@@ -844,7 +835,7 @@
       });
     });
 
-    // Simple animation on scroll
+    // Animation on scroll for program cards
     const programCards = document.querySelectorAll('.program-card');
     
     const observerOptions = {
@@ -856,37 +847,14 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('visible');
         }
       });
     }, observerOptions);
 
     programCards.forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'all 0.6s ease';
       observer.observe(card);
     });
   </script>
 </body>
 </html>
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
